@@ -1,0 +1,21 @@
+﻿android.graphics.Camera实现图像的旋转、缩放
+
+android.graphics.Camera 是一个可以让你将 2D 物件在 3D 空间中移动，
+并将在其移动后的结果画在屏幕上的类别。
+
+Camera与Matrix的一些区别小结：
+
+1.Camera的rotate()相关方法是指定某一维度上旋转指定的角度。
+
+2.Matrix的rotate()相关方法实现的效果是顺时针旋转指定的角度；
+  与Camera指定Z轴旋转效果相同，但方向相反。
+
+3.Camera的translate()方法根据某一维度上视点的位移实现图像的缩放，
+  与Matrix的scale()相关方法作用效果相似，只是Matrix的scale()相关方法是直接指定缩放比例。
+
+4.Camera不支持倾斜操作，Matrix可以直接实现倾斜操作
+
+Camera的处理结果只是生成一个Matrix，
+该Matrix用于Bitmap或Canvas绘制Bitmap时才能产生旋转或缩放的效果。
+
+
